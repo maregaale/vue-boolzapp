@@ -8,6 +8,7 @@
 /* Mix */
 body {
   font-family: 'Lato', sans-serif;
+  font-size: 15px;
 }
 
 
@@ -190,6 +191,50 @@ body {
   width: 100%;
   background-image: url("../img/mine.jpg");
   overflow: auto;
+  display: flex;
+}
+
+.messages_wrapper {
+  width: 85%;
+  height: 80%;
+  margin: auto;
+}
+
+.message_container {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.message_container.right {
+  justify-content: flex-end;
+}
+
+.message_container.left {
+  justify-content: flex-start;
+}
+
+.message {
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding-right: 100px;
+  max-width: 70%;
+  position: relative;
+}
+
+.message.out {
+  background-color: #D5F9BA;
+}
+
+.message .date_time {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 9px;
+  color: #B1B1B1;
 }
 /* /blocco con la messaggistica */
 

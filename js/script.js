@@ -2,6 +2,14 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      date: {
+        day: dayjs().format('DD'),
+        mounth: dayjs().format('MM'),
+        year: dayjs().format('YYYY'),
+        hour: dayjs().format('HH'),
+        minute: dayjs().format('mm'),
+        second: dayjs().format('ss'),
+      },
       contacts: [
         {
           name: 'Michele',
