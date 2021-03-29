@@ -10,6 +10,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+
 .page_wrapper {
   height: 100vh;
   width: 100vw;
@@ -112,6 +113,7 @@ body {
   padding: 10px;
   display: flex;
   align-items: center;
+  height: 60px;
 }
 
 .input_container a {
@@ -137,11 +139,20 @@ body {
 /* /input */
 
 /* blocco delle chat */
+.chats {
+  height: calc(100% - 210px);
+  overflow: auto;
+}
+
 .chats ul  {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .chats ul li {
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
