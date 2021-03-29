@@ -32,9 +32,12 @@ body {
 /* blocchi superiori delle due colonne con accont e icone */
 .top_side {
   background-color: #EAEAEA;
+  justify-content: space-between;
+}
+
+.top_side, .notifications {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -83,6 +86,27 @@ body {
 .account_name {
   font-weight: bold;
 }
+
+/* blocco notifiche */
+.notifications {
+  background-color: #8EDAFC;
+  justify-content: flex-start;
+}
+
+.notifications .avatar_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+}
+.notifications .avatar_container a {
+  color: #8EDAFC;
+}
+
+
+/* /blocco notifiche */
 
 /* parte di destra con la messaggistica */
 .right_side__messages {
