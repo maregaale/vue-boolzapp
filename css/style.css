@@ -51,7 +51,7 @@ body {
   text-decoration: none;
   color: #B1B1B1;
   margin: 10px;
-  font-size: 20px;
+  font-size: 18px;
 }
 /* /blocchi superiori delle due colonne con accont e icone */
 
@@ -150,13 +150,46 @@ body {
 /* /blocco delle chat */
 /* /parte di sinistra con gli accounts */
 
-
-
-
 /* parte di destra con la messaggistica */
 .right_side__messages {
   height: 100%;
   width: 60%;
   min-width: 570px;
-  background-color: red;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+
 }
+
+.right_side__messages .top_side {
+  border-left: 1px solid #B1B1B1;
+  width: 100%;
+}
+
+.access {
+  font-size: 13px;
+  color: #6B7376;
+  font-weight: 400;
+}
+
+/* blocco con la messaggistica */
+.messages {
+  height: calc(100% - 80px - 70px);
+  width: 100%;
+  background-image: url("../img/mine.jpg");
+  overflow: auto;
+}
+/* /blocco con la messaggistica */
+
+/* input messaggio */
+.text_input_container {
+  height: 70px;
+  width: 100%;
+  background-color: #F3EEEA;
+
+}
+
+/* /input messaggio */
+
+/* /parte di destra con la messaggistica */
