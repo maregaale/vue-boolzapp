@@ -229,6 +229,10 @@ body {
   background-color: #D5F9BA;
 }
 
+.message.in {
+  background-color: #fff;
+}
+
 .message .date_time {
   position: absolute;
   bottom: 4px;
