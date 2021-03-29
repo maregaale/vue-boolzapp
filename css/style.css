@@ -47,10 +47,11 @@ body {
   list-style: none;
 }
 
-.icons a {
+.icons a, .input_container a {
   text-decoration: none;
   color: #B1B1B1;
   margin: 10px;
+  font-size: 20px;
 }
 /* /blocchi superiori delle due colonne con accont e icone */
 
@@ -104,9 +105,41 @@ body {
 .notifications .avatar_container a {
   color: #8EDAFC;
 }
-
-
 /* /blocco notifiche */
+
+/* input */
+.input_container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.input_container a {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 15px;
+}
+
+.input_container input {
+  border: 1px solid transparent;
+  width: 80%;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.input_container input:focus {
+  outline: none;
+  border: 1px solid grey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  -o-box-shadow: 0 0 15px rgba(0,0,0,0.6);}
+/* /input */
+
+/* /parte di sinistra con gli accounts */
+
+
+
 
 /* parte di destra con la messaggistica */
 .right_side__messages {
