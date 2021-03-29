@@ -29,12 +29,59 @@ body {
   justify-content: flex-start;
 }
 
+/* blocchi superiori delle due colonne con accont e icone */
+.top_side {
+  background-color: #EAEAEA;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* icone nella top_side */
+.icons ul {
+  display: flex;
+  list-style: none;
+}
+
+.icons a {
+  text-decoration: none;
+  color: #B1B1B1;
+  margin: 10px;
+}
+/* /blocchi superiori delle due colonne con accont e icone */
+
+
 /* parte di sinistra con gli accounts */
 .left_side__users {
   height: 100%;
   width: 40%;
   min-width: 380px;
   background-color: white;
+}
+
+.avatar_container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.avatar_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account_name {
+  font-weight: bold;
 }
 
 /* parte di destra con la messaggistica */
