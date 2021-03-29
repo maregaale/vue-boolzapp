@@ -141,6 +141,12 @@ body {
   list-style: none;
 }
 
+.chats ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 /* /blocco delle chat */
 /* /parte di sinistra con gli accounts */
 
