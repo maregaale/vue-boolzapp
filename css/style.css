@@ -56,13 +56,13 @@ body {
 }
 /* /blocchi superiori delle due colonne con accont e icone */
 
-
 /* parte di sinistra con gli accounts */
 .left_side__users {
   height: 100%;
   width: 40%;
   min-width: 380px;
   background-color: white;
+  border-right: 1px solid #B1B1B1;
 }
 
 .avatar_container {
@@ -173,7 +173,6 @@ body {
 }
 
 .right_side__messages .top_side {
-  border-left: 1px solid #B1B1B1;
   width: 100%;
 }
 
