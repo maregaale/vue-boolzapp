@@ -136,6 +136,12 @@ body {
   -o-box-shadow: 0 0 15px rgba(0,0,0,0.6);}
 /* /input */
 
+/* blocco delle chat */
+.chats ul  {
+  list-style: none;
+}
+
+/* /blocco delle chat */
 /* /parte di sinistra con gli accounts */
 
 

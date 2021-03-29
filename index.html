@@ -101,6 +101,21 @@
             <input type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /input -->
+
+          <!-- blocco chats -->
+          <div class="chats">
+            <ul>
+              <li v-for="(item, index) in contacts">
+                <!-- avatar -->
+                <div class="avatar_container">
+                  <img v-bind:src="`img/avatar${item.avatar}.jpg`" alt="avatar">
+                </div>
+                <!-- /avatar -->
+              </li>
+            </ul>
+          </div>
+          <!-- /blocco chats -->
+
         </div>
         <!-- /blocco di sinistra con gli accounts -->
 
