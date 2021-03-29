@@ -156,7 +156,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 10px;
 }
 
 /* /blocco delle chat */
@@ -247,7 +247,25 @@ body {
   height: 70px;
   width: 100%;
   background-color: #F3EEEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
+.text_input_container input {
+  width: 80%;
+  padding: 15px;
+  font-size: 12px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+
+.text_input_container input:focus {
+  outline: none;
+}
+
+.text_input_container a {
+  color: #6B7376;
 }
 
 /* /input messaggio */
