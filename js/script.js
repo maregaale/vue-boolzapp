@@ -2,6 +2,7 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      inputVal: "",
       newMessageText: "",
       messagesInserted: [],
       contactsIndex: 0,
@@ -95,6 +96,17 @@ const app = new Vue (
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
       active: function (genericIndex) {
         this.contactsIndex = genericIndex;
+      },
+      // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
+      check: function () {
+        if (this.inputVal != 0) {
+          for (var i = 0; i < this.contacts.length; i++) {
+            if (this.inputVal == this.contacts[i].name) {
+              this.contactsIndex = i;
+              this.focus(i);
+            }
+          }
+        }
       },
       // FUNZIONE che aggiunge nuovo messaggio
       addNewMessage: function () {

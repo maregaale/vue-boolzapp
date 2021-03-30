@@ -99,10 +99,10 @@
 
           <!-- input -->
           <div class="input_container">
-            <a href="#">
+            <a @click="check" href="#">
               <i class="fas fa-search"></i>
             </a>
-            <input type="text" placeholder="Cerca o inizia una nuova chat">
+            <input @keyup.13="check" v-model="inputVal" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /input -->
 
