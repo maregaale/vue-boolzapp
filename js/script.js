@@ -2,6 +2,8 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      newMessageText: "",
+      messagesInserted: [],
       contactsIndex: 0,
       dateNow: {
         day: dayjs().format('DD'),
@@ -98,9 +100,29 @@ const app = new Vue (
       ],
     },
     methods: {
+      // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
       active: function (genericIndex) {
         this.contactsIndex = genericIndex;
       },
+      // FUNZIONE che aggiunge nuovo messaggio
+      addNewMessage: function () {
+
+        // controllo che la stringa di input sia non vuota
+        if (this.newMessageText != "") {
+          // aggiungo il nuovo testo del messaggio all'array dei testi dei nuovi messaggi
+          this.messagesInserted.push(this.newMessageText);
+            // pusho il nuovo messaggio nella rispettiva pagina di messaggistica
+            this.contacts[this.contactsIndex].messages.push(
+              {
+                date: `${this.dateNow.day}/${this.dateNow.mounth}/${this.dateNow.year} ${this.dateNow.hour}:${this.dateNow.minute}:${this.dateNow.second}`,
+                message: this.messagesInserted[this.messagesInserted.length - 1],
+                status: 'sent'
+              },
+            );
+            // azzero il valore dell'input
+            this.newMessageText = "";
+        },
+      }
     },
   }
 );
