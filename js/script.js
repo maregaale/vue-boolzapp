@@ -99,13 +99,18 @@ const app = new Vue (
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
       check: function () {
         if (this.inputVal != 0) {
-          for (var i = 0; i < this.contacts.length; i++) {
-            if (this.inputVal == this.contacts[i].name) {
+          // capitalizzo l'inputVal
+          this.inputVal = this.inputVal.charAt(0).toUpperCase() + this.inputVal.slice(1);
+
+          this.contacts.forEach((item, i) => {
+            if (this.inputVal == item.name) {
               this.contactsIndex = i;
-              this.focus(i);
             }
-          }
+          });
         }
+        
+        // pulisco valore input
+        this.inputVal = "";
       },
       // FUNZIONE che aggiunge nuovo messaggio
       addNewMessage: function () {
