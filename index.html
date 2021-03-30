@@ -189,8 +189,6 @@
                 </div>
               </div>
               <!-- /riga contenente il messaggio -->
-
-
             </div>
           </div>
           <!-- /blocco messaggistica -->
@@ -200,7 +198,7 @@
             <a href="#">
               <i class="far fa-smile"></i>
             </a>
-            <input @keyup.enter="addNewMessage" v-model="newMessageText" type="text" placeholder="Scrivi un messaggio">
+            <input @keyup.enter="addNewMessage()" v-model="newMessageText" type="text" placeholder="Scrivi un messaggio">
             <a href="#">
               <i class="fas fa-microphone"></i>
             </a>
