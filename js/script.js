@@ -3,7 +3,7 @@ const app = new Vue (
     el: "#root",
     data: {
       contactsIndex: 0,
-      date: {
+      dateNow: {
         day: dayjs().format('DD'),
         mounth: dayjs().format('MM'),
         year: dayjs().format('YYYY'),
