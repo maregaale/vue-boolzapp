@@ -144,6 +144,7 @@ const app = new Vue (
             this.$refs.list_item[i].classList.remove("list_item_color");
           }
         }
+        // aggiungo la classe
         this.$refs.list_item[index].classList.add("list_item_color");
       },
     },
