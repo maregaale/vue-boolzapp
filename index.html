@@ -109,7 +109,7 @@
           <!-- blocco chats -->
           <div class="chats">
             <ul>
-              <li @click="active(index), focus(index)" v-for="(item, index) in contacts" :class="(contactsIndex == index) ? 'list_item_color' : null">
+              <li @click="active(index), focus(index)" v-for="(item, index) in contacts" :class="{'list_item_color':  contactsIndex == index}">
                 <!-- avatar -->
                 <div class="avatar_container">
                   <img v-bind:src="`img/avatar${item.avatar}.jpg`" alt="avatar">
