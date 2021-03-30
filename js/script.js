@@ -5,14 +5,6 @@ const app = new Vue (
       newMessageText: "",
       messagesInserted: [],
       contactsIndex: 0,
-      dateNow: {
-        day: dayjs().format('DD'),
-        mounth: dayjs().format('MM'),
-        year: dayjs().format('YYYY'),
-        hour: dayjs().format('HH'),
-        minute: dayjs().format('mm'),
-        second: dayjs().format('ss'),
-      },
       contacts: [
         {
           name: 'Michele',
@@ -114,15 +106,15 @@ const app = new Vue (
             // pusho il nuovo messaggio nella rispettiva pagina di messaggistica
             this.contacts[this.contactsIndex].messages.push(
               {
-                date: `${this.dateNow.day}/${this.dateNow.mounth}/${this.dateNow.year} ${this.dateNow.hour}:${this.dateNow.minute}:${this.dateNow.second}`,
+                date: `${dayjs().format('DD')}/${dayjs().format('MM')}/${dayjs().format('YY')} ${dayjs().format('HH')}:${dayjs().format('mm')}:${dayjs().format('ss')}`,
                 message: this.messagesInserted[this.messagesInserted.length - 1],
                 status: 'sent'
               },
             );
             // azzero il valore dell'input
             this.newMessageText = "";
-        },
-      }
+        }
+      },
     },
   }
 );
