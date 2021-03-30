@@ -115,6 +115,17 @@ const app = new Vue (
             this.newMessageText = "";
         }
       },
+      focus: function (index) {
+        // rimuovo le classi dai list-items
+        for (var i = 0; i < this.$refs.list_item.length; i++) {
+
+          if (this.$refs.list_item[i].classList.contains("list_item_color") == true) {
+
+            this.$refs.list_item[i].classList.remove("list_item_color");
+          }
+        }
+        this.$refs.list_item[index].classList.add("list_item_color");
+      }
     },
   }
 );
