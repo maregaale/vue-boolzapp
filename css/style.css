@@ -156,6 +156,12 @@ body {
   display: flex;
   align-items: center;
   padding: 10px;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.chats ul li:hover {
+  background-color: #e9ebeb;
 }
 /* /blocco delle chat */
 /* /parte di sinistra con gli accounts */
