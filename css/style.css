@@ -19,6 +19,10 @@ body {
   overflow: hidden;
 }
 
+.visible {
+  display: block;
+}
+
 /* cuore della pagina */
 #root {
   margin: auto;
@@ -219,6 +223,7 @@ body {
   padding-right: 100px;
   max-width: 70%;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .message.sent {

@@ -2,6 +2,7 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      contactsIndex: 0,
       date: {
         day: dayjs().format('DD'),
         mounth: dayjs().format('MM'),
@@ -51,7 +52,7 @@ const app = new Vue (
             {
                 date: '20/03/2020 16:35:00',
                 message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'received'
+                status: 'sent'
             }
           ],
         },
@@ -95,6 +96,11 @@ const app = new Vue (
           ],
         },
       ],
+    },
+    methods: {
+      active: function (genericIndex) {
+        this.contactsIndex = genericIndex;
+      },
     },
   }
 );

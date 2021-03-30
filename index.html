@@ -109,7 +109,7 @@
           <!-- blocco chats -->
           <div class="chats">
             <ul>
-              <li v-for="(item, index) in contacts">
+              <li @click="active(index)" v-for="(item, index) in contacts" >
                 <!-- avatar -->
                 <div class="avatar_container">
                   <img v-bind:src="`img/avatar${item.avatar}.jpg`" alt="avatar">
@@ -176,11 +176,11 @@
           <!-- /blocco superiore con account e icone -->
 
           <!-- blocco messaggistica -->
-          <div class="messages">
-            <div class="messages_wrapper">
+          <div  class="messages">
+            <div  class="messages_wrapper">
               <!-- riga contenente il messaggio -->
-              <div v-for="item in contacts[0].messages" class="message_container">
-                <div class="message" :class="item.status">
+              <div  class="message_container">
+                <div v-for="(item, index) in contacts[contactsIndex].messages" class="message" :class="item.status">
                   {{item.message}}
 
                   <span class="date_time">
@@ -207,8 +207,6 @@
             </a>
           </div>
           <!-- /input messaggio -->
-
-
         </div>
         <!-- /blocco di destra con la messaggistica -->
 
