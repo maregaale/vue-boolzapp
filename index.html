@@ -136,7 +136,7 @@
             <div class="account">
               <!-- avatar -->
               <div class="avatar_container">
-                <img src="img/avatar_1.jpg" alt="avatar">
+                <img :src="`img/avatar${contacts[contactsIndex].avatar}.jpg`" alt="avatar">
               </div>
               <!-- /avatar -->
 
@@ -179,8 +179,8 @@
           <div  class="messages">
             <div  class="messages_wrapper">
               <!-- riga contenente il messaggio -->
-              <div  class="message_container">
-                <div v-for="(item, index) in contacts[contactsIndex].messages" class="message" :class="item.status">
+              <div class="message_container">
+                <div v-for="item in contacts[contactsIndex].messages" class="message" :class="item.status">
                   {{item.message}}
 
                   <span class="date_time">
