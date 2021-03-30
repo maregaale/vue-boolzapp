@@ -4,7 +4,6 @@ const app = new Vue (
     data: {
       inputVal: "",
       newMessageText: "",
-      messagesInserted: [],
       contactsIndex: 0,
       contacts: [
         {
@@ -112,13 +111,12 @@ const app = new Vue (
       addNewMessage: function () {
         // controllo che la stringa di input sia non vuota
         if (this.newMessageText != "") {
-          // aggiungo il nuovo testo del messaggio all'array dei testi dei nuovi messaggi
-          this.messagesInserted.push(this.newMessageText);
+
           // pusho il nuovo messaggio nella rispettiva pagina di messaggistica
           this.contacts[this.contactsIndex].messages.push(
             {
               date: `${dayjs().format('DD')}/${dayjs().format('MM')}/${dayjs().format('YY')} ${dayjs().format('HH')}:${dayjs().format('mm')}:${dayjs().format('ss')}`,
-              message: this.messagesInserted[this.messagesInserted.length - 1],
+              message: this.newMessageText,
               status: 'sent',
             },
           );
@@ -126,13 +124,10 @@ const app = new Vue (
           this.newMessageText = "";
         }
 
-        // setto la variabile che rapprersenta Vue per portarla nello scope del setTimeout
-        const myVue = this;
-
         // risposta dopo un secondo
-        setTimeout( function () {
+        setTimeout( () => {
           // pusho il nuovo messaggio nella rispettiva pagina di messaggistica
-          myVue.contacts[myVue.contactsIndex].messages.push(
+          this.contacts[this.contactsIndex].messages.push(
             {
               date: `${dayjs().format('DD')}/${dayjs().format('MM')}/${dayjs().format('YY')} ${dayjs().format('HH')}:${dayjs().format('mm')}:${dayjs().format('ss')}`,
               message: 'ok',
