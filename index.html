@@ -32,7 +32,7 @@
 
       <!-- cuore della pagina -->
       <div id="root">
-        <!-- blocco di sinistra con gli accounts -->
+        <!-- colonna di sinistra con gli accounts -->
         <div class="left_side__users">
 
           <!-- blocco superiore con account e icone -->
@@ -126,9 +126,9 @@
           </div>
           <!-- /blocco chats -->
         </div>
-        <!-- /blocco di sinistra con gli accounts -->
+        <!-- /colonna di sinistra con gli accounts -->
 
-        <!-- blocco di destra con la messaggistica -->
+        <!-- colonna di destra con la messaggistica -->
         <div class="right_side__messages">
           <!-- blocco superiore con account e icone -->
           <div class="top_side">
@@ -193,9 +193,27 @@
           </div>
           <!-- /blocco messaggistica -->
 
-          <!-- input messaggio -->
+          <!-- blocco contenitore emoji -->
+          <transition name="slide-fade">
+            <div class="emoji_container" v-if="show">
+              <ul>
+                <li v-for="(item,index) in emoji">
+                  {{item.name}}:
+                  <ul>
+                    <li @click="insertEmoji(element)" v-for="element in emoji[index].emojies">
+                      {{element}}
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </transition>
+          <!-- /blocco contenitore emoji -->
+
+          <!-- blocco input nuovo messaggio -->
           <div class="text_input_container">
-            <a href="#">
+            <a @click="show = !show" href="#">
               <i class="far fa-smile"></i>
             </a>
             <input @keyup.enter="addNewMessage()" v-model="newMessageText" type="text" placeholder="Scrivi un messaggio">
@@ -203,10 +221,9 @@
               <i class="fas fa-microphone"></i>
             </a>
           </div>
-          <!-- /input messaggio -->
+          <!-- / blocco input nuovo messaggio -->
         </div>
-        <!-- /blocco di destra con la messaggistica -->
-
+        <!-- /colonna di destra con la messaggistica -->
       </div>
     </div>
     <!-- /contenitore intera pagina -->

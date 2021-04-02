@@ -211,8 +211,8 @@ body {
   min-width: 570px;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .right_side__messages .top_side {
@@ -227,7 +227,7 @@ body {
 
 /* blocco con la messaggistica */
 .messages {
-  height: calc(100% - 80px - 70px);
+  height: 100%;
   width: 100%;
   background-image: url("../img/mine.jpg");
   overflow: auto;
@@ -279,12 +279,13 @@ body {
 
 /* input messaggio */
 .text_input_container {
-  height: 70px;
   width: 100%;
   background-color: #F3EEEA;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  position: relative;
+  flex-wrap: wrap;
 }
 
 .text_input_container input {
@@ -293,6 +294,7 @@ body {
   font-size: 12px;
   border: 1px solid transparent;
   border-radius: 7px;
+  margin: 15px 0;
 }
 
 .text_input_container input:focus {
@@ -302,5 +304,53 @@ body {
 .text_input_container a {
   color: #6B7376;
 }
+
+.emoji_container {
+  width: 100%;
+  padding: 20px;
+  background-color: grey;
+}
+
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.8s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
 /* /input messaggio */
+
+/* emoji */
+.emoji_container {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.emoji_container ul {
+  list-style: none;
+}
+
+.emoji_container ul {
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.emoji_container>ul li>ul {
+  margin-top: 8px;
+}
+
+.emoji_container>ul li>ul li {
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+/* /emoji */
+
 /* /parte di destra con la messaggistica */

@@ -2,6 +2,25 @@ const app = new Vue (
   {
     el: "#root",
     data: {
+      emoji: [
+        {
+          name: "smileys",
+          emojies: ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "🙁", "☹️",],
+        },
+        {
+          name: "symbols",
+          emojies: ["❤️", "🧡", "💛", "💚", "💙", "💜"],
+        },
+        {
+          name: "gesture and body parts",
+          emojies: ["👋", "🤚", "🖐", "✋", "🖖", "👌", "🤏", "✌️", "🤞", "🤟", "🤙",],
+        },
+        {
+          name: "people",
+          emojies: ["👶", "👧", "🧒", "👦", "👩", "🧑", "👨", "👩‍🦱",],
+        },
+      ],
+      show: false,
       inputVal: "",
       newMessageText: "",
       contactsIndex: 0,
@@ -108,7 +127,7 @@ const app = new Vue (
             }
           });
         }
-        
+
         // pulisco valore input
         this.inputVal = "";
       },
@@ -141,6 +160,9 @@ const app = new Vue (
           );
         }, 1000);
       },
+      insertEmoji: function (emoji) {
+        this.newMessageText += emoji;
+      }
     },
   }
 );
