@@ -109,7 +109,7 @@
           <!-- blocco chats -->
           <div class="chats">
             <ul>
-              <li @click="active(index), focus(index)" v-for="(item, index) in contacts" :class="{'list_item_color':  contactsIndex == index}">
+              <li :tabindex="index" @click="active(item)" v-for="(item, index) in filteredList" :class="{'list_item_color':  contactsIndex == index}">
                 <!-- avatar -->
                 <div class="avatar_container">
                   <img v-bind:src="`img/avatar${item.avatar}.jpg`" alt="avatar">
@@ -198,7 +198,7 @@
             <div class="emoji_container" v-if="show">
               <ul>
                 <li v-for="(item,index) in emoji">
-                  {{item.name}}:
+                  {{item.category}}:
                   <ul>
                     <li @click="insertEmoji(element)" v-for="element in emoji[index].emojies">
                       {{element}}

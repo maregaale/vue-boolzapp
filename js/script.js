@@ -4,19 +4,19 @@ const app = new Vue (
     data: {
       emoji: [
         {
-          name: "smileys",
+          category: "smileys",
           emojies: ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "🙁", "☹️",],
         },
         {
-          name: "symbols",
+          category: "symbols",
           emojies: ["❤️", "🧡", "💛", "💚", "💙", "💜"],
         },
         {
-          name: "gesture and body parts",
+          category: "gesture and body parts",
           emojies: ["👋", "🤚", "🖐", "✋", "🖖", "👌", "🤏", "✌️", "🤞", "🤟", "🤙",],
         },
         {
-          name: "people",
+          category: "people",
           emojies: ["👶", "👧", "🧒", "👦", "👩", "🧑", "👨", "👩‍🦱",],
         },
       ],
@@ -112,22 +112,18 @@ const app = new Vue (
     },
     methods: {
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
-      active: function (genericIndex) {
-        this.contactsIndex = genericIndex;
+      active: function (item) {
+        this.contactsIndex = this.contacts.indexOf(item);
       },
-      // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
+      // FUNZIONE che cerca la chat
       check: function () {
         if (this.inputVal != 0) {
-          // capitalizzo l'inputVal
-          this.inputVal = this.inputVal.charAt(0).toUpperCase() + this.inputVal.slice(1);
-
           this.contacts.forEach((item, i) => {
             if (this.inputVal == item.name) {
               this.contactsIndex = i;
             }
           });
         }
-
         // pulisco valore input
         this.inputVal = "";
       },
@@ -162,6 +158,13 @@ const app = new Vue (
       },
       insertEmoji: function (emoji) {
         this.newMessageText += emoji;
+      }
+    },
+    computed: {
+      filteredList() {
+        return this.contacts.filter((item, index) => {
+          return item.name.toLowerCase().includes(this.inputVal.toLowerCase());
+        })
       }
     },
   }
