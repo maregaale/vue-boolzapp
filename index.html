@@ -109,7 +109,7 @@
           <!-- blocco chats -->
           <div class="chats">
             <ul>
-              <li :tabindex="index" @click="active(item)" v-for="(item, index) in filteredList" :class="{'list_item_color':  contactsIndex == index}">
+              <li @click="active(item)" v-for="(item, index) in filteredList" :class="{'list_item_color':  filteredList[index].name == contacts[contactsIndex].name}">
                 <!-- avatar -->
                 <div class="avatar_container">
                   <img v-bind:src="`img/avatar${item.avatar}.jpg`" alt="avatar">

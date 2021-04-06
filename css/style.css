@@ -197,11 +197,6 @@ body {
   background-color: rgba(233,235,235,0.6);
 }
 
-.chats ul li:focus {
-  background-color: #E0E0E0 !important;
-  outline: none;
-}
-
 .list_item_color {
   background-color: #E0E0E0 !important;
 }
