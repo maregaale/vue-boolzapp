@@ -117,8 +117,8 @@ const app = new Vue (
     methods: {
 
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
-      active: function (item) {
-        this.contactsIndex = this.contacts.findIndex( (contact) => item.id == contact.id);
+      active: function (itemId) {
+        this.contactsIndex = this.contacts.findIndex( (contact) => itemId == contact.id);
       },
             // FUNZIONE che trova la prima chat di chat filtrate
       check: function () {
