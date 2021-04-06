@@ -111,22 +111,30 @@ const app = new Vue (
       ],
     },
     methods: {
+
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
       active: function (item) {
         this.contactsIndex = this.contacts.indexOf(item);
       },
-      // FUNZIONE che cerca la chat
+
+      // FUNZIONE che trova la prima chat di chat filtrate
       check: function () {
-        if (this.inputVal != 0) {
-          this.contacts.forEach((item, i) => {
-            if (this.inputVal == item.name) {
-              this.contactsIndex = i;
-            }
-          });
+        // array di indici
+        const indexes = [];
+        // pusho gli indici
+        this.contacts.forEach((item, i) => {
+          if (item.name.toLowerCase().includes(this.inputVal.toLowerCase())) {
+            indexes.push(i);
+          }
+        });
+        // se array non vuoto, prendo l'indice minore e lo eguaglio a contactsIndex
+        if (indexes.length != 0) {
+          this.contactsIndex = Math.min.apply( Math, indexes);
         }
         // pulisco valore input
         this.inputVal = "";
       },
+
       // FUNZIONE che aggiunge nuovo messaggio
       addNewMessage: function () {
         // controllo che la stringa di input sia non vuota
@@ -143,7 +151,6 @@ const app = new Vue (
           // azzero il valore dell'input
           this.newMessageText = "";
         }
-
         // risposta dopo un secondo
         setTimeout( () => {
           // pusho il nuovo messaggio nella rispettiva pagina di messaggistica
@@ -156,11 +163,14 @@ const app = new Vue (
           );
         }, 1000);
       },
+
+      // FUNZIONE che aggiunge emoji a nuovo messaggio
       insertEmoji: function (emoji) {
         this.newMessageText += emoji;
       }
     },
     computed: {
+      // filtro sull'array dei contatti
       filteredList() {
         return this.contacts.filter((item, index) => {
           return item.name.toLowerCase().includes(this.inputVal.toLowerCase());
