@@ -26,6 +26,7 @@ const app = new Vue (
       contactsIndex: 0,
       contacts: [
         {
+          id: 1,
           name: 'Michele',
           avatar: '_1',
           visible: true,
@@ -48,6 +49,7 @@ const app = new Vue (
           ],
         },
         {
+          id: 2,
           name: 'Fabio',
           avatar: '_2',
           visible: true,
@@ -70,6 +72,7 @@ const app = new Vue (
           ],
         },
         {
+          id: 3,
           name: 'Samuele',
           avatar: '_3',
           visible: true,
@@ -92,6 +95,7 @@ const app = new Vue (
           ],
         },
         {
+          id: 4,
           name: 'Luisa',
           avatar: '_4',
           visible: true,
@@ -114,10 +118,9 @@ const app = new Vue (
 
       // FUNZIONE che mostra la pagina dei messaggi corrispondente alla chat
       active: function (item) {
-        this.contactsIndex = this.contacts.indexOf(item);
+        this.contactsIndex = this.contacts.findIndex( (contact) => item.id == contact.id);
       },
-
-      // FUNZIONE che trova la prima chat di chat filtrate
+            // FUNZIONE che trova la prima chat di chat filtrate
       check: function () {
         // array di indici
         const indexes = [];
